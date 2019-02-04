@@ -18,7 +18,7 @@ export class AppComponent {
     {
       title: 'List',
       url: '/list',
-      icon: 'list'
+      icon: 'battery-charging'
     }
   ];
 
