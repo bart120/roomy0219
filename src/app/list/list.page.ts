@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { all } from 'q';
+import { AppService } from '../services/app.service';
 
 @Component({
   selector: 'app-list',
@@ -24,7 +25,8 @@ export class ListPage implements OnInit {
   public all: Boolean = false;
 
   public items: Array<{ title: string; note: string; icon: string, coche: Boolean }> = [];
-  constructor() {
+
+  constructor(private serv: AppService) {
     for (let i = 1; i < 5; i++) {
       this.items.push({
         title: 'Item ' + i,
@@ -58,6 +60,9 @@ export class ListPage implements OnInit {
       coche: true
     });
     console.log(this.items);
+
+    this.serv.getSalles();
+
   }
 
   // add back when alpha.4 is out
