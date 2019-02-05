@@ -25,5 +25,9 @@ export class AppService {
     return obs;
   }
 
+  getSalle(id: number): Observable<any> {
+    return this.srvHttp.get(`${environment.urlSalles}/${id}`);
+  }
+
 
 }
